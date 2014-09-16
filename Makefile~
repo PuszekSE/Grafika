@@ -1,0 +1,16 @@
+CXX = g++
+TARGET = tut033_depth_buffer
+OBJECTS = $(TARGET).o textfile.o
+SOURCE = $(TARGET).cpp textfile.cpp
+CFLAGS =
+LIBS =-lGL -lglut -lm -lGLEW
+INCLUDE =-I/usr/include
+all:$(OBJECTS)
+	$(CXX) $(INCLUDE) $(OBJECTS) $(LIBS) -o $(TARGET)
+
+$(OBJECTS): $(SOURCE)
+
+clean:
+	-rm -f $(OBJECTS)
+	-rm -f *~ core
+
